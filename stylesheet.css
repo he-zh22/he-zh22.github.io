@@ -140,3 +140,106 @@ span.highlight {
     display: inline-block;
     border-radius: 10px;
 }
+
+
+/* Container for the image */
+.image-container {
+  position: relative;
+  display: inline-block;
+}
+
+/* Thumbnail image */
+.image-container img {
+  width: 250px;
+  height: auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+/* Enlarged image on hover */
+.image-container:hover img {
+  transform: scale(2); /* Scale the image to twice its original size */
+  position: absolute; /* Make the image float above the table */
+  top: 0; /* Adjust position above the container */
+  left: 50%; /* Center horizontally */
+  transform: translate(-70%, -35%) scale(2.5); /* Center and scale */
+  z-index: 1000; /* Ensure the image is above other elements */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Prevent the image from clipping */
+.image-container {
+  overflow: visible;
+}
+
+.bullet {
+  margin: 0 0 1.5em;   /* 下方留出 1.5em 间距，可根据需要调整 */
+  line-height: 1.6;    /* 行高设为 1.6，可让同一段落里的多行文字更宽松 */
+  text-indent: 0;      /* 不需要首行缩进 */
+  font-size: 16px;     /* 字体大小，按需调整 */
+}
+.bullet::before {
+  content: "•";        /* 插入符号，也可以换成 “–”、“▶” 等 */
+  display: inline-block;
+  width: 1em;          /* 留出固定宽度给符号，方便对齐 */
+  margin-right: 0.5em; /* 符号和文字之间留点空隙 */
+  color: #333;         /* 符号颜色，可按需修改 */
+}
+
+/* 默认全局 <li> 的行高、外边距（可按设计稿来） */
+/* li {
+  line-height: 1.2;
+  margin: 0.2em 0;
+} */
+
+/* 只有 .wide-list-area 下的 ul > li 会变大行间距 */
+.wide-list-area ul li {
+  line-height: 1.0;
+  margin: 0 0 0.8em 0;
+  /* 如果想同时让符号（小圆点/编号）与文字之间留缝隙，也可以加 padding-left */
+  /* padding-left: 1em; */
+}
+
+
+.honors-section h2 {
+  margin-bottom: 1rem;
+}
+
+.awards-list {
+  padding-left: 1.5rem;
+}
+
+.awards-list li {
+  margin-bottom: 0.8rem;
+  line-height: 1.0;
+}
+
+.year {
+  color: #666;
+  font-weight: 500;
+}
+
+.toggle-button {
+    background: none;
+    border: none;
+    color: #0066cc;
+    cursor: pointer;
+    text-decoration: underline;
+    padding: 0;
+    font-size: inherit;
+    font-family: inherit;
+}
+
+.toggle-button:hover {
+    color: #004499;
+}
+
+.hidden-authors {
+    display: none;
+}
+
+.author-count {
+    color: #666;
+    font-style: italic;
+}
